@@ -4,6 +4,7 @@ import { User } from "../models/user.model.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import mongoose from "mongoose";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
+import { getIO, getSocketId } from "../socket/socket.js";
 const generateAccessAndRefreshToken = async (userId) => {
   try {
     const user = await User.findById(userId);
@@ -230,6 +231,10 @@ const uploadProfilePhoto = asyncHandler(async (req, res) => {
   if (!updatedUser) {
     throw new ApiError(404, "User not found");
   }
+
+  // socket.io
+  getIO().emit("updatedUserPhoto", {userId: updatedUser?._id, 
+                                    profilePhoto: updatedUser?.profilePhoto})
 
   return res
     .status(200)

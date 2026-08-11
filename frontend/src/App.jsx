@@ -74,6 +74,9 @@ function App() {
     socket.on("deleteMsg", (deleteMsg) => {
       dispatch(setDeletedMsg(deleteMsg));
     });
+    socket.on("updatedProfilePhoto", ({userId, profilePhoto}) => {
+      dispatch(setUpdateProfilePhoto({userId, profilePhoto}))
+    })
 
     return () => {
       socket.disconnect();

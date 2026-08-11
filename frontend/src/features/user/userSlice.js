@@ -23,9 +23,21 @@ const userSlice = createSlice({
         },
         setSelectedUser: (state, action) => {
             state.selectedUser = action.payload
+        },
+        setUpdateProfilePhoto: (state, action) => {
+            const {userid, profilePhoto} = action.payload;
+            if(state.otherUsers){
+            state.onlineUsers = state.otherUsers.map( (user) => 
+                user?._id === userId ? { ...user, profilePhoto } : u
+            );
+            }
+            if(state.selectedUser?._id === userId){
+                state.selectedUser = { ...state.selectedUser, profilePhoto}
+            };
+         
         }
     }
 })
 
-export const { setAuthUser, setOtherUsers, setSelectedUser, setOnlineUsers } = userSlice.actions
+export const { setAuthUser, setOtherUsers, setSelectedUser, setOnlineUsers, setUpdateProfilePhoto} = userSlice.actions
 export default userSlice.reducer
