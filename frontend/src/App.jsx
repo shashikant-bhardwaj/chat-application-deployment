@@ -14,7 +14,7 @@ import {
   setDeletedMsg,
   setUpdatedMessages,
 } from "./features/message/messageSlice.js";
-import updateProfile from "./components/Home/updateProfile.jsx";
+import updateProfile from "./components/Home/UpdateProfile.jsx";
 
 const router = createBrowserRouter([
   {
