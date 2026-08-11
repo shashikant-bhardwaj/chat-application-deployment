@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Message from "./message";
+import Message from "./Message";
 import useGetMessages from "../../hooks/getMessages/useGetMessages";
 import { useSelector } from "react-redux";
-import SendInput from "./sendInput";
+import SendInput from "./SendInput";
 import { useDispatch } from "react-redux";
 import { setSelectedMessage } from "../../features/message/messageSlice";
 import UseDeleteForMe from "../../hooks/deleteForMe/useDeleteForMe";

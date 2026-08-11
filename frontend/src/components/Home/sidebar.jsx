@@ -1,14 +1,14 @@
 import React from "react";
 import { FcSearch } from "react-icons/fc";
-import OtherUsers from "./otherUsers";
+import OtherUsers from "./OtherUsers.jsx";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import LoggedInProfile from "./loggedInProfile";
-import Searchbar from "./searchbar";
+import LoggedInProfile from "./Loggedinprofile.jsx";
+import Searchbar from "./Searchbar.jsx";
 import { setSelectedUser } from "../../features/user/userSlice.js";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
