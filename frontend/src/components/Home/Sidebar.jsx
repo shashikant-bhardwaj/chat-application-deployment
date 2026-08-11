@@ -45,7 +45,7 @@ function Sidebar({ loading }) {
   const logoutHandler = async () => {
     try {
       axios.defaults.withCredentials = true;
-      const res = await axios.post("http://localhost:8080/api/v1/users/logout");
+      const res = await axios.post("https://chat-application-deployment-vqph.onrender.com/api/v1/users/logout");
       navigate("/login");
       toast.success(res.data.message);
       console.log(res);
