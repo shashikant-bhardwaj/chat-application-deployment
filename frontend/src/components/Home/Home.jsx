@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
-import MessageContainer from "./MessageContainer";
+import Sidebar from "./Sidebar.jsx";
+import MessageContainer from "./MessageContainer.jsx";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { setAuthUser } from "../../features/user/userSlice";
+import { setAuthUser } from "../../features/user/userSlice.js";
 
 function Home() {
   const [loading, setLoading] = useState(true);

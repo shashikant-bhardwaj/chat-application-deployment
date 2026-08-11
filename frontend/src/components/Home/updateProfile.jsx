@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
-import UseUploadProfile from "../../hooks/uploadProfile/useUploadProfile";
+import UseUploadProfile from "../../hooks/uploadProfile/useUploadProfile.js";
 
 function updateProfile({ setSelectedProfilePage }) {
   const { uploadProfile } = UseUploadProfile();

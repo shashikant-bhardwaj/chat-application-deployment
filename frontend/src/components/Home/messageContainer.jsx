@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import SendInput from "./SendInput";
+import SendInput from "./SendInput.jsx";
 import Messages from "./Messages";
-import UseMessageMarkAsSeen from "../../hooks/markMessageAsSeen/useMessageMarkAsSeen";
+import UseMessageMarkAsSeen from "../../hooks/markMessageAsSeen/useMessageMarkAsSeen.js";
 import { useDispatch } from "react-redux";
-import { setSelectedUser } from "../../features/user/userSlice";
+import { setSelectedUser } from "../../features/user/userSlice.js";
 import { useSelector } from "react-redux";
 function MessageContainer({ selectedUser }) {
   const dispatch = useDispatch();

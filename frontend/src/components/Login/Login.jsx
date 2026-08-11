@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { setAuthUser } from "../../features/user/userSlice";
+import { setAuthUser } from "../../features/user/userSlice.js";
 
 function Login() {
   const navigate = useNavigate();

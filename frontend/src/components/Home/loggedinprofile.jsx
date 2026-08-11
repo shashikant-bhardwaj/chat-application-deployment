@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import UpdatedProfile from "./UpdateProfile";
+import UpdatedProfile from "./UpdateProfile.jsx";
 
 function LoggedInProfile() {
   const { authUser, onlineUsers } = useSelector((store) => store.user);

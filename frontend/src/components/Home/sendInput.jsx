@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useSendMessage from "../../hooks/sendMessage/useSendMessage";
+import useSendMessage from "../../hooks/sendMessage/useSendMessage.js";
 import EmojiPicker from "emoji-picker-react";
 
 function SendInput() {

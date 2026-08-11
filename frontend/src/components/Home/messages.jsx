@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Message from "./Message";
-import useGetMessages from "../../hooks/getMessages/useGetMessages";
+import Message from "./Message.jsx";
+import useGetMessages from "../../hooks/getMessages/useGetMessages.js";
 import { useSelector } from "react-redux";
 import SendInput from "./SendInput";
 import { useDispatch } from "react-redux";
-import { setSelectedMessage } from "../../features/message/messageSlice";
-import UseDeleteForMe from "../../hooks/deleteForMe/useDeleteForMe";
-import useDeleteForEveryone from "../../hooks/deleteForEveryone/useDeleteForEveryone";
+import { setSelectedMessage } from "../../features/message/messageSlice.js";
+import UseDeleteForMe from "../../hooks/deleteForMe/useDeleteForMe.js";
+import useDeleteForEveryone from "../../hooks/deleteForEveryone/useDeleteForEveryone.js";
 
 function Messages() {
   useGetMessages();
