@@ -11,7 +11,7 @@ function UseDeleteForMe() {
     
     const deleteForMe = async() => {
         axios.defaults.withCredentials = true;
-        await axios.post(`http://localhost:8080/api/v1/messages/delete-msg/${selectedMessage?._id}`)
+        await axios.post(` https://chat-application-deployment-vqph.onrender.com/api/v1/messages/delete-msg/${selectedMessage?._id}`)
         dispatch(setMessages(
             userMessages.filter(msg => msg?._id !== selectedMessage._id)
         ))

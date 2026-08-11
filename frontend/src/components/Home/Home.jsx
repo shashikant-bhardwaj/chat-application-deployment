@@ -17,7 +17,7 @@ function Home() {
       try {
         console.log(loading);
         const res = await axios.get(
-          "http://localhost:8080/api/v1/users/current-user",
+          " https://chat-application-deployment-vqph.onrender.com/api/v1/users/current-user",
           {
             withCredentials: true,
           },

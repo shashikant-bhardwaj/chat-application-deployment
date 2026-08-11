@@ -11,7 +11,7 @@ function UseMessageMarkAsSeen() {
         
        try {
          axios.defaults.withCredentials = true;
-         const res = await axios.patch(`http://localhost:8080/api/v1/messages/seen/${senderId}`)
+         const res = await axios.patch(` https://chat-application-deployment-vqph.onrender.com/api/v1/messages/seen/${senderId}`)
          
          return res.data
        } catch (error) {

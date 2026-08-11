@@ -29,7 +29,7 @@ function Login() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/v1/users/login",
+        " https://chat-application-deployment-vqph.onrender.com/api/v1/users/login",
         user,
         {
           headers: {
