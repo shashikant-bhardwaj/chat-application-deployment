@@ -37,7 +37,7 @@ function App() {
   useEffect(() => {
     if (!authUser?._id) return;
 
-    const socket = io(" https://chat-application-deployment-vqph.onrender.com");
+    const socket = io("https://chat-application-deployment-vqph.onrender.com");
 
     socket.on("connect", () => {
       socket.emit("addUser", authUser._id);
@@ -54,7 +54,7 @@ function App() {
         // message ko immediately seen kar do
         try {
           await axios.patch(
-            ` https://chat-application-deployment-vqph.onrender.com/api/v1/messages/seen/${newMessage.senderId}`,
+            `https://chat-application-deployment-vqph.onrender.com/api/v1/messages/seen/${newMessage.senderId}`,
             {},
             {
               withCredentials: true,

@@ -7,7 +7,7 @@ function OtherUser({ user }) {
   const dispatch = useDispatch();
   const { selectedUser, onlineUsers } = useSelector((store) => store.user);
 
-  const isOnline = onlineUsers.includes(user._id);
+  const isOnline = onlineUsers?.includes(user._id);
 
   return (
     <div
