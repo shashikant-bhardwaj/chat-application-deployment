@@ -35,12 +35,6 @@ function Sidebar({ loading }) {
     );
   }
 
-  if (!authUser) {
-    navigate("/login");
-    console.log("working");
-
-    return null;
-  }
 
   const logoutHandler = async () => {
     try {
@@ -61,69 +55,75 @@ function Sidebar({ loading }) {
   //     { id: 4, name: "Aman", online: false },
   //   ];
 
-  return (
-    <div className="h-full flex flex-col bg-white/5">
-      {/* Header */}
+ return (
+  <div className="h-full min-h-0 flex flex-col bg-white/5 overflow-hidden">
 
+    {/* Search */}
+    <div className="shrink-0">
       <Searchbar setSearchedUser={setSearchedUser} />
+    </div>
 
-      {/* Searched User */}
-      {searchedUser && (
-        <div
-          onClick={() => {
-            dispatch(setSelectedUser(searchedUser));
-            setSearchedUser("");
-          }}
-          className={`
-          flex items-center gap-3 p-4 cursor-pointer rounded-lg
-          transition-all duration-10
+    {/* Searched User */}
+    {searchedUser && (
+      <div
+        onClick={() => {
+          dispatch(setSelectedUser(searchedUser));
+          setSearchedUser("");
+        }}
+        className={`
+          shrink-0 flex items-center gap-3 p-4 cursor-pointer rounded-lg
+          transition-all duration-100
           ${
             selectedUser?._id === searchedUser._id
               ? "bg-blue-500/20 shadow-lg shadow-blue-500/40 border border-blue-400"
               : "hover:bg-white/10"
           }
         `}
-        >
-          <div
-            className="flex items-center gap-3 p-3 rounded-lg 
-                       bg-white/10 cursor-pointer hover:bg-white/20"
-          >
-            <img
-              src={searchedUser.profilePhoto}
-              alt={searchedUser.fullName}
-              className="w-10 h-10 rounded-full object-cover"
-            />
+      >
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-white/10 cursor-pointer hover:bg-white/20 w-full">
+          <img
+            src={searchedUser.profilePhoto}
+            alt={searchedUser.fullName}
+            className="w-10 h-10 rounded-full object-cover shrink-0"
+          />
 
-            <div>
-              <p className="text-white font-medium">{searchedUser.fullName}</p>
+          <div className="min-w-0">
+            <p className="text-white font-medium truncate">
+              {searchedUser.fullName}
+            </p>
 
-              <p className="text-gray-400 text-sm">@{searchedUser.username}</p>
-            </div>
+            <p className="text-gray-400 text-sm truncate">
+              @{searchedUser.username}
+            </p>
           </div>
         </div>
-      )}
+      </div>
+    )}
 
-      {/* All Users */}
-      {!searchedUser && <OtherUsers />}
+    {/* All Users */}
+    {!searchedUser && (
+      <div className="flex-1 min-h-0 overflow-y-auto hide-scrollbar">
+        <OtherUsers />
+      </div>
+    )}
 
-      {/* Logged In User + Logout */}
-      <div className="border-t border-gray-700 p-3 sm:p-4">
-        <div className="flex items-center justify-between gap-3">
-          {/* Logged In User */}
+    {/* Logged In User + Logout */}
+    <div className="shrink-0 border-t border-gray-700 p-3 sm:p-4">
+      <div className="flex items-center justify-between gap-3">
+        <LoggedInProfile />
 
-          <LoggedInProfile />
-
-          {/* Logout Button */}
-          <button
-            onClick={logoutHandler}
-            className="bg-red-600 hover:bg-red-700 px-3 sm:px-4 py-2 rounded-lg text-white text-sm font-medium transition"
-          >
-            Logout
-          </button>
-        </div>
+        <button
+          onClick={logoutHandler}
+          className="bg-red-600 hover:bg-red-700 px-3 sm:px-4 py-2 rounded-lg text-white text-sm font-medium transition"
+        >
+          Logout
+        </button>
       </div>
     </div>
-  );
+
+  </div>
+);
+  
 }
 
 export default Sidebar;

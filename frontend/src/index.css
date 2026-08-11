@@ -9,13 +9,16 @@ body,
   width: 100%;
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 body {
-  background-image: url(/the-odyssey-2026-the-odyssey-christopher-nolan-greek-heroes-from-the-iliad-film-stills-hd-wallpaper-preview.jpg);
+  background-image: url("/the-odyssey-2026-the-odyssey-christopher-nolan-greek-heroes-from-the-iliad-film-stills-hd-wallpaper-preview.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  overflow: hidden;
 }
 
 /* Hide scrollbar for Chrome, Edge, Safari */
