@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
-import MessageContainer from "./MessageContainer";
+import Sidebar from "./sidebar";
+import MessageContainer from "./messageContainer";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
