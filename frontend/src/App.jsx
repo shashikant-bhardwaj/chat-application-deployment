@@ -9,6 +9,7 @@ import Home from "./components/Home/Home.jsx";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setOnlineUsers } from "./features/user/userSlice.js";
+import {setUpdateProfilePhoto } from "./features/user/userSlice.js"
 import {
   setAddMessages,
   setDeletedMsg,
@@ -74,7 +75,7 @@ function App() {
     socket.on("deleteMsg", (deleteMsg) => {
       dispatch(setDeletedMsg(deleteMsg));
     });
-    socket.on("updatedProfilePhoto", ({userId, profilePhoto}) => {
+    socket.on("updatedUserPhoto", ({userId, profilePhoto}) => {
       dispatch(setUpdateProfilePhoto({userId, profilePhoto}))
     })
 
