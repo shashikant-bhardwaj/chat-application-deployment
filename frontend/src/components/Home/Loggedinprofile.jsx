@@ -31,7 +31,7 @@ function LoggedInProfile() {
           </h3>
 
           <p className="text-green-400 text-xs sm:text-sm">
-            {isOnline ? "online" : ""}
+            Online
           </p>
         </div>
       </div>
