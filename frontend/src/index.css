@@ -22,7 +22,7 @@ body {
 }
 
 .chat-background {
-  background-image: url("/WhatsApp\ Image\ 2026-08-11\ at\ 6.44.52\ PM.jpeg");
+  background-image: url("../public/WhatsApp\ Image\ 2026-08-11\ at\ 6.44.52\ PM.jpeg");
   background-size: cover;
   background-position: center;
 }
