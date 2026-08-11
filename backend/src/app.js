@@ -9,7 +9,7 @@ const __dirname = path.resolve();
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    origin:"https://chat-application-deployment-vqph.onrender.com",
     credentials: true,
   })
 );
