@@ -14,7 +14,6 @@ function useSendMessage(){
         setloading(true);
           axios.defaults.withCredentials = true;
         const res = await axios.post(`http://localhost:8080/api/v1/messages/send/${selectedUser?._id}`, {message})
-           console.log("SEND RESPONSE:", res.data);
         if(!res) return;
         dispatch(setMessages([...userMessages, res.data.data]))
         

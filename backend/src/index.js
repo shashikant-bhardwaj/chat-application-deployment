@@ -5,12 +5,14 @@ import { initializeSocket } from "./socket/socket.js";
 import { connectDB } from "./db/index.js";
 import { app } from "./app.js";
 
+
 dotenv.config({
   path: "./.env",
 });
 
 const server = http.createServer(app);
 const io = initializeSocket(server);
+
 
 connectDB()
   .then(() => {
