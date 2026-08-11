@@ -15,7 +15,6 @@ function Home() {
   useEffect(() => {
     const getCurrentUser = async () => {
       try {
-        console.log(loading);
         const res = await axios.get(
           " https://chat-application-deployment-vqph.onrender.com/api/v1/users/current-user",
           {
@@ -23,7 +22,6 @@ function Home() {
           },
         );
 
-        console.log("CURRENT USER:", res.data.data);
 
         dispatch(setAuthUser(res.data.data));
       } catch (error) {
