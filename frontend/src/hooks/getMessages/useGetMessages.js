@@ -16,7 +16,7 @@ function useGetMessages() {
         const getMessages = async () => {
             try {
                 axios.defaults.withCredentials = true;
-                const res = await axios.get(` https://chat-application-deployment-vqph.onrender.com/api/v1/messages/${selectedUser?._id}`)
+                const res = await axios.get(`https://chat-application-deployment-vqph.onrender.com/api/v1/messages/${selectedUser?._id}`)
                 dispatch(setMessages(res.data.data.messages))
              
             } catch (error) {

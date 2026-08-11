@@ -20,7 +20,7 @@ function UseUploadProfile() {
             axios.defaults.withCredentials = true;
 
             const res = await axios.post(
-                " https://chat-application-deployment-vqph.onrender.com/api/v1/users/upload-profile",
+                "https://chat-application-deployment-vqph.onrender.com/api/v1/users/upload-profile",
                 formData
             );
             dispatch(setAuthUser(res.data.data));

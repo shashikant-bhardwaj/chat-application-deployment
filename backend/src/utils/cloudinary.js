@@ -1,3 +1,4 @@
+
 import { v2 as cloudinary } from "cloudinary";
 import fs from "fs/promises";
 import { ApiError } from "./ApiError.js";
@@ -9,10 +10,10 @@ cloudinary.config({
 });
 
 const uploadOnCloudinary = async (localFilePath) => {
-  try {
-    if (!localFilePath) return null;
+  if (!localFilePath) return null;
 
-    // upload file on cloudinary
+  try {
+    // Upload file to Cloudinary
     const response = await cloudinary.uploader.upload(localFilePath, {
       resource_type: "auto",
     });
@@ -20,17 +21,27 @@ const uploadOnCloudinary = async (localFilePath) => {
     if (!response) {
       throw new ApiError(
         400,
-        "something went wrong while uploading profile on cloudinary",
+        "Something went wrong while uploading profile on Cloudinary"
       );
     }
 
-    // file has been uploaded on cloudinary
-    fs.unlink(localFilePath);
+    // Upload successful → delete temporary local file
+    await fs.unlink(localFilePath);
+
     return response;
   } catch (error) {
-    fs.unlink(localFilePath); // avoid throwing if file already gone
+    console.log("CLOUDINARY UPLOAD ERROR:", error.message);
+
+    // Try to delete temporary file if it still exists
+    try {
+      await fs.unlink(localFilePath);
+    } catch (unlinkError) {
+      console.log("TEMP FILE DELETE ERROR:", unlinkError.message);
+    }
+
     return null;
   }
 };
 
 export { uploadOnCloudinary };
+

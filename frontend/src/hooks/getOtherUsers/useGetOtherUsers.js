@@ -10,7 +10,7 @@ const dispatch = useDispatch()
           const fetchOtherUsers = async() => {
         try {
             axios.defaults.withCredentials = true;
-            const res = await axios.get(" https://chat-application-deployment-vqph.onrender.com/api/v1/users/")
+            const res = await axios.get("https://chat-application-deployment-vqph.onrender.com/api/v1/users/")
 
 
             //store

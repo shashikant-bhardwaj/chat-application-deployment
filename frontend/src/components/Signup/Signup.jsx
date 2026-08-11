@@ -30,7 +30,7 @@ function Signup() {
     e.preventDefault()
 
     try {
-      const res = await axios.post(" https://chat-application-deployment-vqph.onrender.com/api/v1/users/register", user, {
+      const res = await axios.post("https://chat-application-deployment-vqph.onrender.com/api/v1/users/register", user, {
         headers: {
           "Content-Type": "application/json"
         },

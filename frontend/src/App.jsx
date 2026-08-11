@@ -78,7 +78,7 @@ function App() {
     return () => {
       socket.disconnect();
     };
-  }, [authUser, selectedUser, dispatch]);
+  }, [authUser, dispatch]);
 
   return <RouterProvider router={router} />;
 }

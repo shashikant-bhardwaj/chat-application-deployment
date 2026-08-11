@@ -16,7 +16,7 @@ function useDeleteForEveryone() {
             axios.defaults.withCredentials = true;
 
             const res = await axios.post(
-                ` https://chat-application-deployment-vqph.onrender.com/api/v1/messages/delete-msg-everyone/${selectedMessage?._id}`
+                `https://chat-application-deployment-vqph.onrender.com/api/v1/messages/delete-msg-everyone/${selectedMessage?._id}`
             );
 
 
