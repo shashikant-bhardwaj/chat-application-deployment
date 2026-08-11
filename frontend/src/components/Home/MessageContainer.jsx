@@ -29,10 +29,8 @@ function MessageContainer({ selectedUser }) {
 
   return (
     <div className="flex h-full min-h-0 flex-col overflow-hidden">
-
       {/* Header */}
       <div className="flex shrink-0 items-center gap-3 p-3 sm:p-4 border-b border-gray-700">
-
         {/* Back Button */}
         <button
           onClick={() => dispatch(setSelectedUser(null))}
@@ -52,7 +50,9 @@ function MessageContainer({ selectedUser }) {
             {selectedUser?.fullName}
           </h2>
 
-          <p className="text-green-400 text-sm">
+          <p
+            className={`text-sm ${isOnline ? "text-green-400" : "text-gray-400"}`}
+          >
             {isOnline ? "Online" : "Offline"}
           </p>
         </div>
@@ -67,7 +67,6 @@ function MessageContainer({ selectedUser }) {
       <div className="shrink-0">
         <SendInput />
       </div>
-
     </div>
   );
 }
